@@ -1,9 +1,18 @@
-angular.module("projetoTecnico").controller("projetoTecnicoControle", function ($scope, $http) {
+angular.module("projetoTecnico").controller("projetoTecnicoControle", function(funcionarioService, $scope) {
     $scope.message = "duh!";
-    $scope.funcionarios = [];
-    var carregarFuncionarios = function(){
-        $http.get("http://localhost:8080/funcionarios").success(function(data, status){
-            $scope.funcionarios =data;
+    $scope.funcionarios = {};
+
+    var carregarFuncionarios = function () {
+        funcionarioService.get().then(function (response) {
+            $scope.funcionarios = response.data.content;
+            console.log($scope.funcionarios)
         });
-    }
-});
+    };
+
+
+    
+
+    carregarFuncionarios();
+    
+   
+})
