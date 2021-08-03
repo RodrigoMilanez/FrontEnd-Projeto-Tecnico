@@ -9,10 +9,5 @@ angular.module("projetoTecnico").controller("projetoTecnicoControle", function(f
         });
     };
 
-
-    
-
     carregarFuncionarios();
-    
-   
 })
