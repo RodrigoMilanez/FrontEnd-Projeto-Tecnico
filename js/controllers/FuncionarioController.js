@@ -1,4 +1,4 @@
-angular.module("projetoTecnico").controller("projetoTecnicoControle", function(funcionarioService, $scope) {
+angular.module("projetoTecnico").controller("funcionarioControle", function(funcionarioService, $scope) {
     $scope.message = "duh!";
     $scope.funcionarios = {};
 
