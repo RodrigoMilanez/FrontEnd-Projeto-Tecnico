@@ -8,6 +8,9 @@ angular.module("projetoTecnico").controller("funcionarioControle", function(func
             console.log($scope.funcionarios)
         });
     };
-
     carregarFuncionarios();
+    $scope.ordenarPor = function(campo){
+        $scope.criterioDeOrdenacao = campo;
+        $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
+    }
 })

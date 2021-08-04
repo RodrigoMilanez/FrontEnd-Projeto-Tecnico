@@ -1,0 +1,117 @@
+
+:root {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+}
+
+
+body {
+    margin: 0;
+    font-family:  var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: rgb(24, 24, 24);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  .link-main {
+    color: #6c757d;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+  }
+  .link-main:hover, .link-secondary:focus {
+    color: #ffc107;
+  }
+
+  .corpo{
+    margin-left:100px;
+    margin-right:100px;
+  }
+
+  .t1{
+    color:#51e2ff;
+  }
+  
+  .t2{
+    color:#ffc107;
+  }
+  
+  .t3{
+    color:#ff006a;
+  }
+  
+  .titulo{
+    color: #ff006a;
+  }
+  
+  h1, .h1 {
+    font-size: calc(1.375rem + 1.5vw);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  h3, .h3 {
+    font-size: calc(1.3rem + 0.6vw);
+    text-align: center;
+    color:#ffc107;
+  }
+  @media (min-width: 1200px) {
+    h3, .h3 {
+      font-size: 1.75rem;
+    }
+  }
+
+  table{
+    font-size:25px;
+    text-align: center;
+    position:relative;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  
+  .busca{
+    margin-left: 300px;
+    margin-right:300px;
+    margin-bottom: 10px;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    background-attachment: fixed;
+    background-color: #212529;
+    border-bottom: #212529;
+  }
