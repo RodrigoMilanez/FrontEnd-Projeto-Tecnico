@@ -5,7 +5,8 @@
 
        <input type="password" ng-model="senha" name="senha" placeholder="senha" ng-required="true"><br><br>
 
-        <button ng-click="inserirLogin" class="btn btn-primary btn-block" ng-disabled="loginForm.$invalid">Login</button>
+        <button ng-click="_postLogin" class="btn btn-primary btn-block" ng-disabled="loginForm.$invalid">Login</button>
+        {{message}}
         {{email}}
     </form>
 </div>

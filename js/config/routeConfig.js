@@ -4,4 +4,9 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         templateUrl: "view/funcionarios.html",
         controller: "funcionarioController"
     });
+
+    $routeProvider.when("/login", {
+        templateUrl: "view/login.html",
+        controller: "loginController"
+    });
 });
