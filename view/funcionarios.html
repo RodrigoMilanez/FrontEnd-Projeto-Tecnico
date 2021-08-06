@@ -1,0 +1,35 @@
+
+<div>
+   <div ng-include="'view/menu.html'"></div>
+    <header>
+        <div>
+            <h1 class="titulo">Funcionários</h1>
+            <h3>Consulte ou cadastre um novo funcionario</h3>
+        </div>
+    </header>
+    <div class="corpo">
+        
+        <div class="busca">
+            <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="Quem você procura?">
+        </div>
+        <div>
+            <table class="table table-striped table-dark">
+                <tr>
+                    <th scope="col"><a class="link-main" href="" ng-click="ordenarPor('id')">Id</a></th>
+                    <th scope="col"><a class="link-main" href="" ng-click="ordenarPor('nome')"> Nome</a></th>
+                    <th scope="col"><a class="link-main" href="" ng-click="ordenarPor('perfil')">Perfil</th>
+                </tr>
+                <tr
+                    ng-repeat="funcionario in funcionarios | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
+                    <td class="t1">{{funcionario.id}}</td>
+                    <td class="t2">{{funcionario.nome}}</td>
+                    <td class="t3">{{funcionario.perfil[0]}}</td>
+                </tr>
+            </table>
+            <li>
+                <a href="cadastroFuncionario.html" target="_self" class="link-main">Cadastrar novo funcionário</a>
+            </li>
+            
+        </div>
+    </div>
+</div>

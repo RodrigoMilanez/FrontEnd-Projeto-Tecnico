@@ -1,1 +1,1 @@
-angular.module("projetoTecnico", []);
+angular.module("projetoTecnico", ["ngRoute"]);
