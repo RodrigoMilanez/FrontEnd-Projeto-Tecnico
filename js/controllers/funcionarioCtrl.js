@@ -1,5 +1,4 @@
 angular.module("projetoTecnico").controller("funcionarioController", function(funcionarioService, $scope) {
-    $scope.message = "duh!";
     $scope.funcionarios = {};
 
     var carregarFuncionarios = function () {
