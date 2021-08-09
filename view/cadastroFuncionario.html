@@ -5,5 +5,8 @@
             <h1 class="titulo">Registro Funcionario</h1>
         </div>
     </header>
-    <form action=""></form>
+    <form nome="newFuncionario">
+        <input type="text" placeholder="Nome" ng-required="true" ng-model="newFuncionario.nome">
+        {{newFuncionario.nome}}
+    </form>
 </div>

@@ -9,4 +9,8 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         templateUrl: "view/login.html",
         controller: "loginController"
     });
+    $routeProvider.when("/cadastroFuncionario", {
+        templateUrl: "view/cadastroFuncionario.html",
+        controller: "funcionarioController"
+    });
 });
