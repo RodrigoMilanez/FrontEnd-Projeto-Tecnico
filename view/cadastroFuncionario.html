@@ -4,9 +4,31 @@
             <div ng-include="'view/menu.html'"></div>
             <h1 class="titulo">Registro Funcionario</h1>
         </div>
-    </header>
-    <form nome="newFuncionario">
-        <input type="text" placeholder="Nome" ng-required="true" ng-model="newFuncionario.nome">
-        {{newFuncionario.nome}}
-    </form>
+    </header class="corpo">
+    <div class="corpo">  
+        <form nome="newFuncionario"  class="form-control centered-form panel">
+            <label for="nome">Nome do funcionário</label> <br>
+            <input type="text" name="nome" placeholder="Nome" ng-required="true" ng-model="newFuncionario.nome"><br>
+            
+            <label for="telefone">Telefone</label> <br>
+            <input type="text" name="telefone" placeholder="(XX)XXXX-XXXXX" ng-required="true" ng-model="newFuncionario.telefone"><br>
+            
+            <label for="email">Email</label> <br>
+            <input type="text" name="email" placeholder="reparos@gmail.com" ng-required="true" ng-model="newFuncionario.email"><br>
+           
+            <label for="senha">Senha</label><br>
+            <input type="password" name="senha" placeholder="coxinha123" ng-required="true" ng-model="newFuncionario.senha"><br>
+
+            <label for="perfil">Perfil</label><br>
+            <select name="perfil" ng-model="newFuncionario.perfil" >
+                <option value="ADMIN">ADMIN</option>
+                <option value="TECNICO">TECNICO</option>
+                <option value="ATENDENTE">ATENDENTE</option>
+            </select>
+            <br>
+            <br>
+            <button  class="btn btn-primary btn-block" ng-disabled="loginForm.$invalid" ng-click="postFuncionario(newFuncionario)">Cadastrar novo funcionário</button> <br>
+       
+        </form>
+    </div>   
 </div>

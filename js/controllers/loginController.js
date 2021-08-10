@@ -10,11 +10,3 @@ angular.module("projetoTecnico").controller("loginController", function($scope, 
         });
     }
 })
-//loginService.login(user).then((response) => {
-//    const authorization = response.headers("authorization");
-//  localStorage.setItem("token", authorization);
-// console.log($scope.showNavBar)
-//    $location.path("/app");
-//}).catch(function(error){
-//    alert("Usúario ou senha incorretos!");
-//})
