@@ -39,14 +39,17 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
-
-
   .link-main {
     color: #6c757d;
     text-align: center;
     font-size: 30px;
     text-decoration: none;
   }
+
+  a:hover{
+    color: #ffc107;
+  }
+
   .primaria:hover, .link-secondary:focus {
     color: #51e2ff;
   }
