@@ -6119,11 +6119,11 @@ textarea.form-control-lg {
   color: #0a58ca;
 }
 
-.link-secondary {
+/*.link-secondary {
   color: #6c757d;
   text-align: center;
   font-size: 30px;
-}
+}*/
 .link-secondary:hover, .link-secondary:focus {
   color: #ffc107;
 }

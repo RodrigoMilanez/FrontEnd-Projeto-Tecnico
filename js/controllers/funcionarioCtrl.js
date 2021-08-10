@@ -1,4 +1,4 @@
-angular.module("projetoTecnico").controller("funcionarioController", function( $scope,funcionarioService, $location) {
+angular.module("projetoTecnico").controller("funcionarioController", function ($scope, funcionarioService, $location) {
     $scope.funcionarios = {};
 
     var carregarFuncionarios = function () {
@@ -8,16 +8,24 @@ angular.module("projetoTecnico").controller("funcionarioController", function( $
         });
     };
     carregarFuncionarios();
-    $scope.ordenarPor = function(campo){
+    $scope.ordenarPor = function (campo) {
         $scope.criterioDeOrdenacao = campo;
         $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
     }
-    
-    $scope.postFuncionario= function (newFuncionario){
-        funcionarioService.post(newFuncionario).then(function(response){
+
+    $scope.postFuncionario = function (newFuncionario) {
+        funcionarioService.post(newFuncionario).then(function (response) {
             $location.path("/funcionarios");
-        }).catch(function(error){
+        }).catch(function (error) {
             alert("Algo deu errado");
-    });
+        });
+    };
+
+    $scope.deletarFuncionario = function (funcionarios) {
+        funcionarios.filter(function (funcionario) {
+            if (contato.selecionado) {
+                console.log(funcionarios)
+            }
+        });
     };
 })

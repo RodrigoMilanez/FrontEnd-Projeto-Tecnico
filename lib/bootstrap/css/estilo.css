@@ -47,15 +47,23 @@ body {
     font-size: 30px;
     text-decoration: none;
   }
-  .link-main:hover, .link-secondary:focus {
+  .primaria:hover, .link-secondary:focus {
+    color: #51e2ff;
+  }
+
+  .secundaria:hover, .link-secondary:focus {
     color: #ffc107;
+  }
+  
+  .terciaria:hover, .link-secondary:focus {
+    color: #ff006a;
   }
 
   .corpo{
     margin-left:100px;
     margin-right:100px;
   }
-
+ 
   .t1{
     color:#51e2ff;
   }
