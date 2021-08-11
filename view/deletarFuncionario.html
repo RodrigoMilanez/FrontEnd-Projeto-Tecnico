@@ -6,8 +6,8 @@
     </header>
     <div class="corpo alerta">
         <h1 class=" danger">Tem certeza que deseja deletar o usuário {{funcionarios.nome}}?</h1>
-        <button class="btn btn-primary btn-block btn-danger">Deletar funcionário</button>
-        <button ng-click="" class="btn btn-primary btn-block "><a class="normal"
+        <button class="btn btn-primary btn-block btn-danger" ng-click="deleteFuncionario(funcionarios.id)">Deletar funcionário</button>
+        <button class="btn btn-primary btn-block "><a class="normal"
                 href="index.html#/funcionarioPerfil/{{funcionarios.id}}">cancelar</a></button>
      </div>
 </div>

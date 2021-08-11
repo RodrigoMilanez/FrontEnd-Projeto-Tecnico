@@ -5,11 +5,11 @@ angular.module("projetoTecnico").controller("funcionarioPerfilController", funct
             console.log(response)
     });
 
-  /*  $scope.deleteFuncionario = function ($routeParams.id) {
+   $scope.deleteFuncionario = function (id) {
         funcionarioService.delete($routeParams.id).then(function (response) {
             $location.path("/funcionarios");
         }).catch(function (error) {
             alert("Não foi possivel registrar novo funcionário");
         });
-    };*/
+    };
 })
