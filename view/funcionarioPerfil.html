@@ -1,0 +1,33 @@
+<div>
+    <header>
+        <div>
+            <div ng-include="'view/menu.html'"></div>
+            <h1 class="titulo">{{funcionarios.nome}}</h1>
+            <h3>{{funcionarios.perfil[0]}}</h3>
+        </div>
+    </header>
+    <div class="corpo perfil">
+        <table class="table table-striped table-dark">
+            <tr>
+                <td class="c1">Id</td>
+                <td class="t1">{{funcionarios.id}}</td>
+            </tr>
+            <tr>
+                <td class="c1">nome</td>
+                <td class="t2">{{funcionarios.nome}}</td>
+            </tr>
+            <tr>
+                <td class="c1">email</td>
+                <td class="t3">{{funcionarios.email}}</td>
+            </tr>
+            <tr>
+                <td class="c1">telefone</td>
+                <td class="t1">{{funcionarios.telefone}}</td>
+            </tr>
+            <tr>
+                <td class="c1"><a href="" class="link-main t2 c1 lin" >Alterar</a></td>
+                <td class="danger"><a ng-href="index.html#/deletarFuncionario/{{funcionarios.id}}" class="link-main danger lin">Deletar</a></td>
+            </tr>
+        </table>
+    </div>
+</div>

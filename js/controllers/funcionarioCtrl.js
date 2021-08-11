@@ -4,7 +4,7 @@ angular.module("projetoTecnico").controller("funcionarioController", function ($
     var carregarFuncionarios = function () {
         funcionarioService.get().then(function (response) {
             $scope.funcionarios = response.data.content;
-            console.log($scope.funcionarios)
+            console.log(response)
         });
     };
     carregarFuncionarios();
@@ -17,15 +17,13 @@ angular.module("projetoTecnico").controller("funcionarioController", function ($
         funcionarioService.post(newFuncionario).then(function (response) {
             $location.path("/funcionarios");
         }).catch(function (error) {
-            alert("Algo deu errado");
+            alert("Não foi possivel registrar novo funcionário");
         });
     };
 
-    $scope.deletarFuncionario = function (funcionarios) {
-        funcionarios.filter(function (funcionario) {
-            if (contato.selecionado) {
-                console.log(funcionarios)
-            }
-        });
-    };
+   
+
+
+
+
 })

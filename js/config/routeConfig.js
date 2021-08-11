@@ -13,4 +13,14 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         templateUrl: "view/cadastroFuncionario.html",
         controller: "funcionarioController"
     });
-});
+
+    $routeProvider.when("/funcionarioPerfil/:id",{
+    templateUrl: "view/funcionarioPerfil.html",
+    controller: "funcionarioPerfilController"
+    })
+
+    $routeProvider.when("/deletarFuncionario/:id",{
+        templateUrl: "view/deletarFuncionario.html",
+        controller: "funcionarioPerfilController"
+        })
+})
