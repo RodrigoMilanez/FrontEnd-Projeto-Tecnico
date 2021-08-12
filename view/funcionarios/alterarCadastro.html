@@ -1,0 +1,16 @@
+<div>
+    <header>
+        <div>
+            <div ng-include="'view/utilitários/menu.html'"></div>
+            <h1 class="titulo">{{funcionarios.nome}}</h1>
+            <h3>Alterar dados do usuário</h3>
+        </div>
+    </header>
+    <div class="corpo ">
+        <form nome="newFuncionario"  class="form-control centered-form panel">
+            
+            <label for="senha">Nova senha</label><br>
+            <input type="password" name="senha" placeholder="Nova senha" ng-required="true" ng-model="newFuncionario.senha"><br>
+     </div>
+     {{funcionarios}}
+</div>

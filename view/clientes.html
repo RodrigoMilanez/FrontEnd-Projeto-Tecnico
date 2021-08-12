@@ -2,8 +2,8 @@
     <header>
         <div>
             <div ng-include="'view/utilitários/menu.html'"></div>
-            <h1 class="titulo">Funcionários</h1>
-            <h3>Consulte ou cadastre um novo funcionario</h3>
+            <h1 class="titulo">Clientes</h1>
+            <h3>Consulte ou cadastre um novo Cliente</h3>
         </div>
     </header>
     <div class="corpo">
@@ -18,18 +18,18 @@
                     <th scope="col"><a class="link-main terciaria" href="" ng-click="ordenarPor('perfil')">Perfil</th>
                 </tr>
                 <tr
-                    ng-repeat="funcionario in funcionarios | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
+                    ng-repeat="cliente in clientes | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
 
                     <td class="t1"><a class="link-main t1 primaria"
-                            ng-href="index.html#/funcionarioPerfil/{{funcionario.id}}">{{funcionario.id}}</a></td>
+                            ng-href="index.html#/clientesPerfil/{{cliente.id}}">{{cliente.id}}</a></td>
                     <td class="t2 "><a class="link-main t2 secundaria"
-                            ng-href="index.html#/funcionarioPerfil/{{funcionario.id}}">{{funcionario.nome}}</td>
+                            ng-href="index.html#/clientesPerfil/{{cliente.id}}">{{cliente.nome}}</td>
                     <td class="t3"><a class="link-main t3 terciaria"
-                            ng-href="index.html#/funcionarioPerfil/{{funcionario.id}}">{{funcionario.perfil[0]}}</td>
+                            ng-href="index.html#/clientesPerfil/{{cliente.id}}">{{cliente.email}}</td>
                 </tr>
             </table>
                 <a href="index.html#/cadastroFuncionario" target="_self" class="link-main lin">Cadastrar novo
-                    funcionário</a>
+                    cliente</a>
         </div>
     </div>
 </div>

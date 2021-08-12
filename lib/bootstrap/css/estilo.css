@@ -187,3 +187,9 @@ body {
 .c1{
   margin: 65px ;
 }
+
+a{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

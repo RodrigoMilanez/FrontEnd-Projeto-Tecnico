@@ -9,7 +9,15 @@ angular.module("projetoTecnico").controller("funcionarioPerfilController", funct
         funcionarioService.delete($routeParams.id).then(function (response) {
             $location.path("/funcionarios");
         }).catch(function (error) {
-            alert("Não foi possivel registrar novo funcionário");
+            alert("Você não tem permissão para deletar o cliente");
+        });
+    };
+
+    $scope.deleteFuncionario = function (id) {
+        funcionarioService.delete($routeParams.id).then(function (response) {
+            $location.path("/funcionarios");
+        }).catch(function (error) {
+            alert("Você não tem permissão para deletar o cliente");
         });
     };
 })
