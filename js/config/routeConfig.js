@@ -1,4 +1,5 @@
 angular.module("projetoTecnico").config(function ($routeProvider,$locationProvider){
+   //========FUNCIONARIOS===========
     $locationProvider.hashPrefix('');
     $routeProvider.when("/funcionarios", {
         templateUrl: "view/funcionarios.html",
@@ -24,11 +25,11 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         controller: "funcionarioPerfilController"
         })
 
-    $routeProvider.when("/alterarCadastro/:id",{
-        templateUrl: "view/funcionarios/alterarCadastro.html",
+    $routeProvider.when("/alterarSenha/:id",{
+        templateUrl: "view/funcionarios/alterarSenha.html",
         controller: "funcionarioPerfilController"
         })
-
+    //=================CLIENTES==================================
     $routeProvider.when("/clientes", {
         templateUrl: "view/clientes.html",
         controller: "clientesController"

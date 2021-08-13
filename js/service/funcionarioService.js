@@ -1,4 +1,4 @@
-angular.module("projetoTecnico").service("funcionarioService", function (config, $http) {
+angular.module("projetoTecnico").service("funcionarioService", function (config, $http, $routeParams) {
 
     this.get = () => {
         return $http.get(config.apiUrl + "/funcionarios")
@@ -13,5 +13,9 @@ angular.module("projetoTecnico").service("funcionarioService", function (config,
 
     this.getFuncId = (funcionarioId) => {
         return $http.get(config.apiUrl + "/funcionarios/" + funcionarioId)
+    }
+
+    this.postSenha = (senha, id) => {
+        return $http.post(config.apiUrl + "/funcionarios/alterarSenha/"+ id, senha)
     }
 })

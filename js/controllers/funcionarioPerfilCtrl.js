@@ -13,11 +13,15 @@ angular.module("projetoTecnico").controller("funcionarioPerfilController", funct
         });
     };
 
-    $scope.deleteFuncionario = function (id) {
-        funcionarioService.delete($routeParams.id).then(function (response) {
-            $location.path("/funcionarios");
+    $scope.alteraSenha = function (x, id) {
+        // var senha = {
+        //     senha:x,
+        //     id:id
+        // }
+        funcionarioService.postSenha(x, id).then(function (response) {
+            $location.path("/funcionarioPerfil/7" );
         }).catch(function (error) {
-            alert("Você não tem permissão para deletar o cliente");
+            alert("Falha na atualização de senha");
         });
     };
 })
