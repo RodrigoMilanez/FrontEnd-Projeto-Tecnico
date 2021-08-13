@@ -13,4 +13,17 @@ angular.module("projetoTecnico").controller("clientePerfilController", function 
         });
     };
     
+    $scope.alterarCliente = function (id,cliente) {
+        var novoCliente = {
+            nome: cliente.nome,
+            email: cliente.email,
+            telefone: cliente.telefone,
+            endereco: cliente.endereco
+        }
+        clientesService.put(id, novoCliente).then(function (response) {
+            $location.path("/clientesPerfil/"+id);
+        }).catch(function (error) {
+            alert("Não foi possivel alterar o cliente");
+        });
+    };
 })

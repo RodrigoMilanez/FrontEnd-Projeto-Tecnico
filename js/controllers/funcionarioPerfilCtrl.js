@@ -19,7 +19,7 @@ angular.module("projetoTecnico").controller("funcionarioPerfilController", funct
         //     id:id
         // }
         funcionarioService.postSenha(x, id).then(function (response) {
-            $location.path("/funcionarioPerfil/7" );
+            $location.path("/funcionarioPerfil/{{id}}" );
         }).catch(function (error) {
             alert("Falha na atualização de senha");
         });

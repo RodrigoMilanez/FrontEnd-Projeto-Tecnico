@@ -14,4 +14,8 @@ angular.module("projetoTecnico").service("clientesService", function (config, $h
     this.getCliId = (clientesId) => {
         return $http.get(config.apiUrl + "/clientes/" + clientesId)
     }
+
+    this.put = (id, novoCliente) => {
+        return $http.put(config.apiUrl + "/clientes/" + id, novoCliente)
+    }
 })

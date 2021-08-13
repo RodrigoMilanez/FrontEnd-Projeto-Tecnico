@@ -42,4 +42,8 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         templateUrl: "view/clientes/deletarCliente.html",
         controller: "clientePerfilController"
     });
+    $routeProvider.when("/alterarCliente/:id", {
+        templateUrl: "view/clientes/alterarCliente.html",
+        controller: "clientePerfilController"
+    });
 })
