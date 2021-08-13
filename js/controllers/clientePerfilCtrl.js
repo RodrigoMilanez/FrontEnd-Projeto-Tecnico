@@ -1,19 +1,19 @@
-angular.module("projetoTecnico").controller("clientePerfilController", function ($scope, clientesService, $location, $routeParams){
-    
+angular.module("projetoTecnico").controller("clientePerfilController", function ($scope, clientesService, $location, $routeParams) {
+
     clientesService.getCliId($routeParams.id).then(function (response) {
-            $scope.clientes = response.data;
-            console.log(response)
+        $scope.clientes = response.data;
+        console.log(response)
     });
 
-   $scope.deleteCliente = function (id) {
+    $scope.deleteCliente = function (id) {
         clientesService.delete($routeParams.id).then(function (response) {
             $location.path("/clientes");
         }).catch(function (error) {
             alert("Não foi possivel deletar o cliente");
         });
     };
-    
-    $scope.alterarCliente = function (id,cliente) {
+
+    $scope.alterarCliente = function (id, cliente) {
         var novoCliente = {
             nome: cliente.nome,
             email: cliente.email,
@@ -21,7 +21,7 @@ angular.module("projetoTecnico").controller("clientePerfilController", function 
             endereco: cliente.endereco
         }
         clientesService.put(id, novoCliente).then(function (response) {
-            $location.path("/clientesPerfil/"+id);
+            $location.path("/clientesPerfil/" + id);
         }).catch(function (error) {
             alert("Não foi possivel alterar o cliente");
         });
