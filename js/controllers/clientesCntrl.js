@@ -7,4 +7,8 @@ angular.module("projetoTecnico").controller("clientesController", function ($sco
         });
     };
     carregarClientes();
+    $scope.ordenarPor = function (campo) {
+        $scope.criterioDeOrdenacao = campo;
+        $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
+    }
 })

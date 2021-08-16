@@ -46,4 +46,17 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         templateUrl: "view/clientes/alterarCliente.html",
         controller: "clientePerfilController"
     });
+    //=================ORDENS DE SERVIÇO========================
+    $routeProvider.when("/ordens", {
+        templateUrl: "view/ordens.html",
+        controller: "ordensController"
+    });
+    
+    $routeProvider.when("/ordens/:id", {
+        templateUrl: "view/ordens/ordensDetalhe.html",
+        controller: "ordensDetalheController"
+    });
+
+    $routeProvider.otherwise("/funcionarios")  
+    
 })
