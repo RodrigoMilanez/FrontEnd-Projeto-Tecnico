@@ -1,6 +1,6 @@
 angular.module("projetoTecnico").controller("ordensDetalheController", function ($scope, ordensService, $location, $routeParams){
     
-    ordensService.getFuncId($routeParams.id).then(function (response) {
+    ordensService.getId($routeParams.id).then(function (response) {
         $scope.ordens = response.data;
         console.log(response)
 });

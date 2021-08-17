@@ -34,6 +34,11 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         templateUrl: "view/clientes.html",
         controller: "clientesController"
     });
+    $routeProvider.when("/cadastrarCliente", {
+        templateUrl: "view/clientes/cadastrarCliente.html",
+        controller: "clientesController"
+    });
+    
     $routeProvider.when("/clientesPerfil/:id", {
         templateUrl: "view/clientes/clientesPerfil.html",
         controller: "clientePerfilController"
