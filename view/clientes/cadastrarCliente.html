@@ -21,7 +21,6 @@
             
             <label for="cpf">CPF do cliente</label> <br>
             <input type="text" name="cpf" placeholder="CPF" ng-required="true" ng-model="newCliente.cpf"><br>
-            {{newCliente}}
             <button  class="btn btn-primary btn-block" ng-disabled="loginForm.$invalid" ng-click="postCliente(newCliente)">Cadastrar novo cliente</button> <br>
        
         </form>

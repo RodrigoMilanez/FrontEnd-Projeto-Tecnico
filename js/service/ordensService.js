@@ -3,10 +3,10 @@ angular.module("projetoTecnico").service("ordensService", function (config, $htt
     this.get = () => {
         return $http.get(config.apiUrl + "/ordens")
     }
-    /*this.post = (newFuncionario) => {
-        return $http.post(config.apiUrl + "/ordens", newFuncionario)
+    this.post = (newOrder) => {
+        return $http.post(config.apiUrl + "/ordens", newOrder)
     }
-    
+    /*
     this.delete = (funcionarioId) => {
         return $http.delete(config.apiUrl + "/ordens/" + funcionarioId)
     }
