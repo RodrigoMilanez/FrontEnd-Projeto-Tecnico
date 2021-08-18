@@ -11,4 +11,12 @@ angular.module("projetoTecnico").controller("clientesController", function ($sco
         $scope.criterioDeOrdenacao = campo;
         $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
     }
+
+    $scope.postCliente = function (newCliente) {
+        clientesService.post(newCliente).then(function (response) {
+            $location.path("/clientes");
+        }).catch(function (error) {
+            alert("Não foi possivel registrar novo funcionário");
+        });
+    };
 })

@@ -3,9 +3,9 @@ angular.module("projetoTecnico").service("clientesService", function (config, $h
     this.get = () => {
         return $http.get(config.apiUrl + "/clientes")
     }
-    /*this.post = (newFuncionario) => {
-        return $http.post(config.apiUrl + "/clientes", newFuncionario)
-    }*/
+    this.post = (newCliente) => {
+        return $http.post(config.apiUrl + "/clientes", newCliente)
+    }
     
     this.delete = (clientesId) => {
         return $http.delete(config.apiUrl + "/clientes/" + clientesId)

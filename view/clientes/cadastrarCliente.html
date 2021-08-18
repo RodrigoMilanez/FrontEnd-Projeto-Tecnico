@@ -7,22 +7,22 @@
     </header class="corpo">
     <div class="corpo">  
         <form nome="newFuncionario"  class="form-control centered-form panel">
-            <label for="nome">Nome do funcionário</label> <br>
-            <input type="text" name="nome" placeholder="Nome" ng-required="true" ng-model="newFuncionario.nome"><br>
+            <label for="nome">Nome do cliente</label> <br>
+            <input type="text" name="nome" placeholder="Nome" ng-required="true" ng-model="newCliente.nome"><br>
             
-            <label for="telefone">Telefone</label> <br>
-            <input type="text" name="telefone" placeholder="(XX)XXXX-XXXXX" ng-required="true" ng-model="newFuncionario.telefone"><br>
+            <label for="email">Email do cliente</label> <br>
+            <input type="text" name="email" placeholder="Email" ng-required="true" ng-model="newCliente.email"><br>
             
-            <label for="email">Email</label> <br>
-            <input type="text" name="email" placeholder="reparos@gmail.com" ng-required="true" ng-model="newFuncionario.email"><br>
-           
-            <label for="senha">Senha</label><br>
-            <input type="password" name="senha" placeholder="coxinha123" ng-required="true" ng-model="newFuncionario.senha"><br>
-
-            <label for="perfil">Perfil</label><br>
-            <br>
-            <br>
-            <button  class="btn btn-primary btn-block" ng-disabled="loginForm.$invalid" ng-click="postFuncionario(newFuncionario)">Cadastrar novo funcionário</button> <br>
+            <label for="telefone">Telefone do cliente</label> <br>
+            <input type="text" name="telefone" placeholder="Telefone" ng-required="true" ng-model="newCliente.telefone"><br>
+            
+            <label for="endereco">Endereço do cliente</label> <br>
+            <input type="text" name="endereco" placeholder="Endereço" ng-required="true" ng-model="newCliente.endereco"><br>
+            
+            <label for="cpf">CPF do cliente</label> <br>
+            <input type="text" name="cpf" placeholder="CPF" ng-required="true" ng-model="newCliente.cpf"><br>
+            {{newCliente}}
+            <button  class="btn btn-primary btn-block" ng-disabled="loginForm.$invalid" ng-click="postCliente(newCliente)">Cadastrar novo cliente</button> <br>
        
         </form>
     </div>   
