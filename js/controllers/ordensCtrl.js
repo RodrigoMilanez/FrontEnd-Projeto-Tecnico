@@ -22,9 +22,11 @@ angular.module("projetoTecnico").controller("ordensController", function ($scope
 
     $scope.postOrdem = function (newOrder) {
         var ordem = {
+            "clienteId" : newOrder.clienteId,
             "nome" : newOrder.nome,
-            "pagamento": {
-                "@type" : newOrder.pagamento.tipo
+            "pagamento":{
+                "@type" : newOrder.pagamento.tipo,
+                "parcelas" : newOrder.pagamento.parcelas
             },
             "equipamentos": [ { 
                 "nome":newOrder.equipamentos.nome,
@@ -36,7 +38,7 @@ angular.module("projetoTecnico").controller("ordensController", function ($scope
         ]
         }
         ordensService.post(ordem).then(function (response) {
-            $location.path("/funcionarios");
+            $location.path("/ordens");
         }).catch(function (error) {
             alert("Não foi possivel registrar novo funcionário");
         });

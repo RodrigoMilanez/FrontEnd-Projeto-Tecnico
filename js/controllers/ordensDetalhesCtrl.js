@@ -4,6 +4,7 @@ angular.module("projetoTecnico").controller("ordensDetalheController", function 
         $scope.ordens = response.data;
         console.log(response)
 });
+
 /*
 $scope.deleteFuncionario = function (id) {
     funcionarioService.delete($routeParams.id).then(function (response) {

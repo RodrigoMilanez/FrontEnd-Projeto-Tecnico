@@ -9,7 +9,6 @@
         
         <div ng-include="'view/utilitários/carregarClientes'"></div>
         <form nome="newOrder"  class="form-control centered-form panel">
-            {{newOrder}}
             <label for="cliente">Cliente</label><br>
 
             <select name="cliente" ng-model="newOrder.clienteId" >
@@ -22,8 +21,8 @@
                 <option value="pagamentoComCartao"> Cartão</option>
             </select> <br>
             
-            <label ng-show="newOrder.pagamento.tipo == 2" for="parcelas">Número de parcelas</label> <br>
-            <input type="text" ng-show="newOrder.pagamento.tipo  == 2" name="parcelas" placeholder="Parcelas" ng-required="true" ng-model="newOrder.pagamento.parcelas"><br>
+            <label ng-show="newOrder.pagamento.tipo == 'pagamentoComCartao'" for="parcelas">Número de parcelas</label> <br>
+            <input type="text" ng-show="newOrder.pagamento.tipo  == 'pagamentoComCartao'" name="parcelas" placeholder="Parcelas" ng-required="true" ng-model="newOrder.pagamento.parcelas"><br>
             
             
 
