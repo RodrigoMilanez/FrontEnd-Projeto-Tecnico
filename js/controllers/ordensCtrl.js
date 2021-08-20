@@ -26,7 +26,7 @@ angular.module("projetoTecnico").controller("ordensController", function ($scope
             "nome" : newOrder.nome,
             "pagamento":{
                 "@type" : newOrder.pagamento.tipo,
-                "parcelas" : newOrder.pagamento.parcelas
+                "numeroDeParcelas" : newOrder.pagamento.parcelas
             },
             "equipamentos": [ { 
                 "nome":newOrder.equipamentos.nome,
@@ -40,10 +40,10 @@ angular.module("projetoTecnico").controller("ordensController", function ($scope
         ordensService.post(ordem).then(function (response) {
             $location.path("/ordens");
         }).catch(function (error) {
-            alert("Não foi possivel registrar novo funcionário");
+            alert("Não foi possivel registrar nova ordem");
         });
     };
-
-   
+    
+    
     
 })

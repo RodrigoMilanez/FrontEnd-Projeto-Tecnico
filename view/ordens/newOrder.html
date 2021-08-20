@@ -5,44 +5,51 @@
             <h1 class="titulo">Registro de ordem de serviço</h1>
         </div>
     </header class="corpo">
-    <div class="corpo">  
-        
+    <div class="corpo">
+
         <div ng-include="'view/utilitários/carregarClientes'"></div>
-        <form nome="newOrder"  class="form-control centered-form panel">
+        <form nome="newOrder" class="form-control centered-form panel">
             <label for="cliente">Cliente</label><br>
 
-            <select name="cliente" ng-model="newOrder.clienteId" >
+            <select name="cliente" ng-model="newOrder.clienteId">
                 <option ng-repeat="cliente in clientes" value="{{cliente.id}}">{{cliente.nome}}</option>
             </select> <br></br>
 
             <label for="tipo">tipo de pagamento</label><br>
-            <select name="tipo" ng-model="newOrder.pagamento.tipo" >
+            <select name="tipo" ng-model="newOrder.pagamento.tipo">
                 <option value="pagamentoComBoleto">Boleto</option>
                 <option value="pagamentoComCartao"> Cartão</option>
             </select> <br>
-            
-            <label ng-show="newOrder.pagamento.tipo == 'pagamentoComCartao'" for="parcelas">Número de parcelas</label> <br>
-            <input type="text" ng-show="newOrder.pagamento.tipo  == 'pagamentoComCartao'" name="parcelas" placeholder="Parcelas" ng-required="true" ng-model="newOrder.pagamento.parcelas"><br>
-            
-            
 
-            <div >
+            <label ng-show="newOrder.pagamento.tipo == 'pagamentoComCartao'" for="parcelas">Número de parcelas</label>
+            <br>
+            <input type="text" ng-show="newOrder.pagamento.tipo  == 'pagamentoComCartao'" name="parcelas"
+                placeholder="Parcelas" ng-model="newOrder.pagamento.parcelas"><br>
+            <!--
+            <button class="btn btn-primary btn-block" ng-click="numEq()">Adicionar novo equipamento</button> <br>
+-->
+            <div>
                 <label for="eqNome">Nome do equipamento</label> <br>
-                <input type="text" name="eqNome" placeholder="Nome equipamento" ng-required="true" ng-model="newOrder.equipamentos.nome"><br>
-                
-                <label for="eqTipo">Tipo</label> <br>
-                <input type="text" name="eqTipo" placeholder="Eletrodomésticos, industrial, etc..." ng-required="true" ng-model="newOrder.equipamentos.tipo"><br>
-                
-                <label for="eqMarca">Marca</label> <br>
-                <input type="text" name="eqMarca" placeholder="Brastemp, Electrolux..." ng-required="true" ng-model="newOrder.equipamentos.marca"><br>
-                
-                <label for="eqAvaria">Avaria</label> <br>
-                <input type="text" name="eqAvaria" placeholder="Ex:Tela quebrada" ng-required="true" ng-model="newOrder.equipamentos.avaria"><br>
-                
-            </div>
-            <button  class="btn btn-primary btn-block" ng-click="postOrdem(newOrder)">Registrar ordem</button> <br>
-       
+                <input type="text" name="eqNome" placeholder="Nome equipamento" ng-required="true"
+                    ng-model="newOrder.equipamentos.nome"><br>
 
+                <label for="eqTipo">Tipo</label> <br>
+                <input type="text" name="eqTipo" placeholder="Eletrodomésticos, industrial, etc..." ng-required="true"
+                    ng-model="newOrder.equipamentos.tipo"><br>
+
+                <label for="eqMarca">Marca</label> <br>
+                <input type="text" name="eqMarca" placeholder="Brastemp, Electrolux..." ng-required="true"
+                    ng-model="newOrder.equipamentos.marca"><br>
+
+                <label for="eqAvaria">Avaria</label> <br>
+                <input type="text" name="eqAvaria" placeholder="Ex:Tela quebrada" ng-required="true"
+                    ng-model="newOrder.equipamentos.avaria"><br>
+                
+
+            </div> <br>
+
+            <button class="btn btn-primary btn-block" ng-click="postOrdem(newOrder)">Registrar ordem</button> <br>
         </form>
-    </div>   
+        <a href="index.html#/ordens" class="link-main lin">< Voltar</a>
+    </div>
 </div>

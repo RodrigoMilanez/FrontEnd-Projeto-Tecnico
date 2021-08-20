@@ -6,11 +6,12 @@ angular.module("projetoTecnico").service("ordensService", function (config, $htt
     this.post = (newOrder) => {
         return $http.post(config.apiUrl + "/ordens", newOrder)
     }
-    /*
-    this.delete = (funcionarioId) => {
-        return $http.delete(config.apiUrl + "/ordens/" + funcionarioId)
+    this.deleteEq = (ordemId, equipamentoId) => {
+        return $http.delete(config.apiUrl + "/ordens/" + ordemId + "/equipamentos/" + equipamentoId)
     }
-*/
+    this.delete = (ordemId) => {
+        return $http.delete(config.apiUrl + "/ordens/" + ordemId)
+    }
     this.getId = (ordemId) => {
         return $http.get(config.apiUrl + "/ordens/" + ordemId)
     }

@@ -67,6 +67,10 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         controller: "ordensDetalheController"
     });
 
+    $routeProvider.when("/deletarOrdem/:id", {
+        templateUrl: "view/ordens/deletarOrdem.html",
+        controller: "ordensDetalheController"
+    });
 
 
 
