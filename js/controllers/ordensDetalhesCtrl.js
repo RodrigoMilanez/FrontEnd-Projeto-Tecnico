@@ -17,7 +17,7 @@ $scope.deleteOrdem = function (ordemId) {
 
     $scope.deleteEquipamento = function (ordemId, equipamentoId) {
         ordensService.deleteEq(ordemId ,equipamentoId).then(function (response) {
-            $location.path("/ordens/{{ordemId}}");
+            $location.path("/ordens/" + ordemId);
         })
     };
 
