@@ -15,4 +15,15 @@ angular.module("projetoTecnico").service("ordensService", function (config, $htt
     this.getId = (ordemId) => {
         return $http.get(config.apiUrl + "/ordens/" + ordemId)
     }
+    this.imagemEq = (ordemId, equipamentoId, file) => {
+        var fd = new FormData();
+        fd.append('file', file);
+        return $http.post(config.apiUrl + "/ordens/" + ordemId + "/equipamentos/" + equipamentoId +"/pictures", fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        })
+    }
+    this.diagnostico = (ordem,ordemId) => {
+        return $http.put(config.apiUrl + "/ordens/" + ordemId + "/diagnostico", ordem)
+    }
 })

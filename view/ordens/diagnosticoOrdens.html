@@ -1,0 +1,30 @@
+<div>
+    <header>
+        <div>
+            <div ng-include="'view/utilitários/menu.html'"></div>
+            <h1 class="titulo">Alterar Ordem {{ordens.id}}</h1>
+        </div>
+    </header class="corpo">
+    <div class="corpo">  
+        <form  nome="newCliente"  class="form-control centered-form panel" ng-repeat="equipamento in ordens.equipamentos">
+            <label for="nome">Nome do Equipamento:</label> <br>
+            <input type="text" name="nome" placeholder="{{equipamento.nome}}" ng-model="equipamento.nome"><br>
+            
+            <label for="tipo">Tipo do Equipamento:</label> <br>
+            <input type="text" name="nome" placeholder="{{equipamento.tipo}}" ng-model="equipamento.tipo"><br>
+            
+            <label for="marca">Marca do Equipamento:</label> <br>
+            <input type="text" name="marca" placeholder="{{equipamento.marca}}" ng-model="equipamento.marca"><br>
+            
+            <label for="avaria">Avaria do Equipamento:</label> <br>
+            <input type="text" name="avaria" placeholder="{{equipamento.avaria}}" ng-model="equipamento.avaria"><br>
+            
+            <label for="orcamento">Orçamento do Equipamento:</label> <br>
+            <input type="text" name="orcamento" placeholder="{{equipamento.orcamento}}" ng-model="equipamento.orcamento"><br>
+        </form>
+        <button class="btn btn-primary btn-block" ng-click="diagnostico(ordens, ordens.id)">salvar diagnóstico</button>
+        
+    </div>   
+</div>
+
+      

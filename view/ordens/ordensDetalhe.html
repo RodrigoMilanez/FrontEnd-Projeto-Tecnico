@@ -27,6 +27,10 @@
                 <td class="c1">Instante</td>
                 <td>{{ordens.instante}}</td>
             </tr>
+            <tr ng-hide="ordens.orcamento == 0">
+                <td class="c1">Orçamento</td>
+                <td>{{ordens.orcamento}}</td>
+            </tr>
         </table>
 
         <h1>Pagamento:</h1>
@@ -82,15 +86,15 @@
             </tr>
             <tr ng-show="equipamento.img == null">
                 <td>
-                    <input ng-model="equipamento.img" class="btn btn-primary btn-block" placeholder="Selecione imagem" type="file">
+                    <input class="btn btn-primary btn-block" placeholder="Selecione imagem" type="file" id="file" file-model="fotoModel">
                 </td>
                 <td>
-                    <button  ng-click="imagem(equipamento.img)" class="btn btn-primary btn-block">Enviar imagem</button>
+                    <button  ng-click="enviarFoto(ordens, equipamento.id)" class="btn btn-primary btn-block">Enviar imagem</button>
                 </td>
             </tr>
 
             <tr ng-hide="equipamento.img == null">
-                <td colspan="2"><img src="https://projeto-tecnico-rmo.s3.sa-east-1.amazonaws.com/{{equipamento.img}}"
+                <td colspan="2"><img ng-src="https://projeto-tecnico-rmo.s3.sa-east-1.amazonaws.com/{{equipamento.img}}"
                         alt=""></td>
             </tr>
 
@@ -114,8 +118,11 @@
                 </td>
             </tr>
         </table>
-        <td class="danger"><a ng-href="index.html#/deletarOrdem/{{ordens.id}}" class="link-main danger lin">Deletar</a>
-        </td> <br>
+        <button class="btn btn-primary btn-block btn-danger"> <a ng-href="index.html#/deletarOrdem/{{ordens.id}}" class="link-main lin">Deletar</a></button>
+   
+        <button class="btn btn-primary btn-block "><a class="normal"
+            href="index.html#/diagnostico/{{ordens.id}}">Inserir diagnóstico para ordem</a></button>
+
         <a class="link-main lin" href="index.html#/ordens">
             < Voltar</a>
     </div>

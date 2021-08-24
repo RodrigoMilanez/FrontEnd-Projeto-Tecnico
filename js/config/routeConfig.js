@@ -72,7 +72,10 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         controller: "ordensDetalheController"
     });
 
-
+    $routeProvider.when("/diagnostico/:id", {
+        templateUrl: "view/ordens/diagnosticoOrdens.html",
+        controller: "ordensDetalheController"
+    });
 
 
     $routeProvider.otherwise("/funcionarios")  
