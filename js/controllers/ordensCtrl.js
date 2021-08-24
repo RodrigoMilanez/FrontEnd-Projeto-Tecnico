@@ -19,6 +19,14 @@ angular.module("projetoTecnico").controller("ordensController", function ($scope
         });
     };
     carregarClientes()
+   
+
+    $scope.equipamentos=[];
+
+   $scope.increase = function(equipamento){
+       $scope.equipamentos.push(angular.copy(equipamento));
+       delete $scope.equipamento;
+   }
 
     $scope.postOrdem = function (newOrder) {
         var ordem = {
@@ -28,14 +36,7 @@ angular.module("projetoTecnico").controller("ordensController", function ($scope
                 "@type" : newOrder.pagamento.tipo,
                 "numeroDeParcelas" : newOrder.pagamento.parcelas
             },
-            "equipamentos": [ { 
-                "nome":newOrder.equipamentos.nome,
-                "tipo": newOrder.equipamentos.tipo,
-                "marca": newOrder.equipamentos.marca,
-                "avaria": newOrder.equipamentos.avaria,
-                "orcamento": 0
-            }
-        ]
+            "equipamentos": $scope.equipamentos,
         }
         ordensService.post(ordem).then(function (response) {
             $location.path("/ordens");
@@ -43,7 +44,6 @@ angular.module("projetoTecnico").controller("ordensController", function ($scope
             alert("Não foi possivel registrar nova ordem");
         });
     };
-    
     
     
 })
