@@ -91,7 +91,7 @@
             </tr>
             <tr ng-if="uploadImagem == true && equipamento.img == null">
                 <td>
-                    <input type="file" id="file" name="files" file-model="myFile" >
+                    <input class="btn btn-primary btn-block " type="file" id="file" name="files" file-model="myFile" >
                 </td>
                 <td>
                     <button class="btn btn-primary btn-block " ng-click="enviarFoto(ordens, equipamento.id)" class="btn btn-primary btn-block">Enviar imagem</button>
