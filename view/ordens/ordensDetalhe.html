@@ -79,17 +79,22 @@
                 <td>{{equipamento.orcamento}}</td>
                 
             </tr>
-            <!-- IMAGEM  -->
+            <!-- =======================IMAGEM  =========================================-->
+            <tr ng-show="uploadImagem == false && equipamento.img == null"> 
+                <td colspan="2">
+                    <button class="btn btn-primary btn-block " ng-click="uploadImagem = true">Enviar imagem</button>
+                </td>
+            </tr>
 
-            <tr  ng-show="equipamento.img == null">
+            <tr  ng-show="uploadImagem == true && equipamento.img == null">
                 <td colspan="2" class="c1">Enviar imagem</td>
             </tr>
-            <tr ng-show="equipamento.img == null">
+            <tr ng-if="uploadImagem == true && equipamento.img == null">
                 <td>
-                    <input class="btn btn-primary btn-block" placeholder="Selecione imagem" type="file" id="file" file-model="fotoModel">
+                    <input type="file" id="file" name="files" file-model="myFile" >
                 </td>
                 <td>
-                    <button  ng-click="enviarFoto(ordens, equipamento.id)" class="btn btn-primary btn-block">Enviar imagem</button>
+                    <button class="btn btn-primary btn-block " ng-click="enviarFoto(ordens, equipamento.id)" class="btn btn-primary btn-block">Enviar imagem</button>
                 </td>
             </tr>
 
@@ -97,7 +102,7 @@
                 <td colspan="2"><img ng-src="https://projeto-tecnico-rmo.s3.sa-east-1.amazonaws.com/{{equipamento.img}}"
                         alt=""></td>
             </tr>
-
+<!--=================================== IMAGEM=============================================-->
             <tr ng-show="dlt==false">
                 <td  colspan="2" class="danger"> <button class="btn btn-primary btn-block btn-danger" ng-model="dlt"
                         ng-click="dlt=true">Deletar</button></td> <br>
