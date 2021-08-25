@@ -197,3 +197,22 @@ a{
 img{
   width: 450px;
 }
+
+.accept{
+  background-color:#198754;
+  color: white;
+ border-color: black;
+}
+
+.accept:hover{
+  background-color:#66ff00;
+}
+
+.cancel{
+  background-color: #ff3015;
+  color: white;
+  border-color: black;
+}
+.cancel:hover{
+  background-color:#ff1e00;
+}

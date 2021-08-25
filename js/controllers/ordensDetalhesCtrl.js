@@ -42,9 +42,23 @@ $scope.deleteOrdem = function (ordemId) {
             alert(error.data.message);
         })
     }   
+    
+    $scope.aceitar = function(ordem, ordemId){
+         ordensService.aceitar(ordemId).then(function (response){
+            $location.path("/Checkout");
+         })
     }
+
+    $scope.cancelar = function(ordemId){
+        ordensService.cancelar(ordemId).then(function (response){
+           $location.path("/Checkout");
+        })
+   }
+    
+})
+
+    
 
     
 
 
-)

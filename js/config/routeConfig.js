@@ -77,6 +77,16 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         controller: "ordensDetalheController"
     });
 
+    $routeProvider.when("/clienteView/:id", {
+        templateUrl: "view/ordens/ordemClienteView.html",
+        controller: "ordensDetalheController"
+    });
+
+    $routeProvider.when("/Checkout", {
+        templateUrl: "view/utilitários/checkout.html",
+        controller: "ordensDetalheController"
+    });
+
 
     $routeProvider.otherwise("/funcionarios")  
     

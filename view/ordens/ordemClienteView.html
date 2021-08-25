@@ -1,0 +1,110 @@
+
+<div><br></div>
+        <div class="corpo perfil">
+            <table class="table table-striped table-dark">
+                <tr class="titulo-tb">
+                    <h1>Detalhes da Ordem:</h1>
+                </tr>
+                {{ordens}}
+                <tr>
+                    <td class="c1">Id</td>
+                    <td>{{ordens.id}}</td>
+                </tr>
+                <tr>
+                    <td class="c1">Cliente</td>
+                    <td>{{ordens.cliente.nome}}</td>
+                </tr>
+                <tr>
+                    <td class="c1">Status</td>
+                    <td class="t3">{{ordens.status}}</td>
+                </tr>
+                <tr>
+                    <td class="c1">Instante</td>
+                    <td>{{ordens.instante}}</td>
+                </tr>
+                <tr ng-hide="ordens.orcamento == 0">
+                    <td class="c1">Orçamento</td>
+                    <td class="t3">{{ordens.orcamento}}</td>
+                </tr>
+            </table>
+    
+            <h1>Pagamento:</h1>
+            <table class="table table-striped table-dark">
+                <tr>
+                    <td class="c1">Id</td>
+                    <td>{{ordens.pagamento.id}}</td>
+                </tr>
+                <tr>
+                    <td class="c1">Situação</td>
+                    <td>{{ordens.pagamento.estado}}</td>
+                </tr>
+                <tr ng-hide="ordens.pagamento.numeroDeParcelas == null">
+                    <td class="c1">Parcelas</td>
+                    <td>{{ordens.pagamento.numeroDeParcelas}}</td>
+                </tr>
+            </table>
+    
+            <h1>Equipamentos:</h1>
+    
+            <table class="table table-striped table-dark" ng-repeat="equipamento in ordens.equipamentos">
+                <tr>
+                    <td class="c1">Id</td>
+                    <td class="t3">{{equipamento.id}}</td>
+                </tr>
+                <tr>
+                    <td class="c2">Nome</td>
+                    <td>{{equipamento.nome}}</td>
+                </tr>
+                <tr>
+                    <td class="c3">Avaria</td>
+                    <td>{{equipamento.avaria}}</td>
+                </tr>
+    
+                <tr>
+                    <td class="c1">Tipo</td>
+                    <td>{{equipamento.tipo}}</td>
+                </tr>
+    
+                <tr>
+                    <td class="c2">Marca</td>
+                    <td>{{equipamento.marca}}</td>
+                </tr>
+                <tr ng-hide="equipamento.orcamento == null || equipamento.orcamento == 0">
+                    <td class="c2">Orçamento</td>
+                    <td>{{equipamento.orcamento}}</td>
+    
+                </tr>
+                <tr ng-show="dlt==false">
+                    <td colspan="2" class="danger"> <button class="btn btn-primary btn-block btn-danger" ng-model="dlt"
+                            ng-click="dlt=true">Deletar</button></td> <br>
+                </tr>
+    
+                <tr ng-show="dlt==true">
+                    <td colspan="2">Tem certeza que deseja deletar o equipamento {{equipamento.nome}}</td>
+                </tr>
+    
+                <tr ng-show="dlt==true">
+                    <td>
+                        <button class="btn btn-primary btn-block btn-danger" ng-model="delete"
+                            ng-click="deleteEquipamento(ordens.id,equipamento.id)">Deletar</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" ng-model="delete" ng-click="dlt=false">Cancelar</button>
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <table class="table table-striped table-dark">
+                        <h1 colspan="2">Confirme ou cancele a ordem de serviço:</h1>
+                    <tr>
+                        
+                        <td>
+                            <button class="btn btn-block accept" ng-click="aceitar(ordens, ordens.id)">Aceitar ordem</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-block cancel" ng-click="cancelar(ordens.id)"  ng-click="dlt=false">Cancelar Ordem</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    </div>
