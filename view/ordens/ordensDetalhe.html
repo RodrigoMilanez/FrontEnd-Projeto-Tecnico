@@ -29,7 +29,7 @@
             </tr>
             <tr ng-hide="ordens.orcamento == 0">
                 <td class="c1">Orçamento</td>
-                <td>{{ordens.orcamento}}</td>
+                <td class="t3">{{ordens.orcamento}}</td>
             </tr>
         </table>
 
@@ -77,24 +77,25 @@
             <tr ng-hide="equipamento.orcamento == null || equipamento.orcamento == 0">
                 <td class="c2">Orçamento</td>
                 <td>{{equipamento.orcamento}}</td>
-                
+
             </tr>
             <!-- =======================IMAGEM  =========================================-->
-            <tr ng-show="uploadImagem == false && equipamento.img == null"> 
+            <tr ng-show="uploadImagem == false && equipamento.img == null">
                 <td colspan="2">
                     <button class="btn btn-primary btn-block " ng-click="uploadImagem = true">Enviar imagem</button>
                 </td>
             </tr>
 
-            <tr  ng-show="uploadImagem == true && equipamento.img == null">
+            <tr ng-show="uploadImagem == true && equipamento.img == null">
                 <td colspan="2" class="c1">Enviar imagem</td>
             </tr>
             <tr ng-if="uploadImagem == true && equipamento.img == null">
                 <td>
-                    <input class="btn btn-primary btn-block " type="file" id="file" name="files" file-model="myFile" >
+                    <input class="btn btn-primary btn-block " type="file" id="file" name="files" file-model="myFile">
                 </td>
                 <td>
-                    <button class="btn btn-primary btn-block " ng-click="enviarFoto(ordens, equipamento.id)" class="btn btn-primary btn-block">Enviar imagem</button>
+                    <button class="btn btn-primary btn-block " ng-click="enviarFoto(ordens, equipamento.id)"
+                        class="btn btn-primary btn-block">Enviar imagem</button>
                 </td>
             </tr>
 
@@ -102,9 +103,9 @@
                 <td colspan="2"><img ng-src="https://projeto-tecnico-rmo.s3.sa-east-1.amazonaws.com/{{equipamento.img}}"
                         alt=""></td>
             </tr>
-<!--=================================== IMAGEM=============================================-->
+            <!--=================================== IMAGEM=============================================-->
             <tr ng-show="dlt==false">
-                <td  colspan="2" class="danger"> <button class="btn btn-primary btn-block btn-danger" ng-model="dlt"
+                <td colspan="2" class="danger"> <button class="btn btn-primary btn-block btn-danger" ng-model="dlt"
                         ng-click="dlt=true">Deletar</button></td> <br>
             </tr>
 
@@ -118,15 +119,15 @@
                         ng-click="deleteEquipamento(ordens.id,equipamento.id)">Deletar</button>
                 </td>
                 <td>
-                    <button class="btn btn-primary btn-block" ng-model="delete"
-                            ng-click="dlt=false">Cancelar</button>
+                    <button class="btn btn-primary btn-block" ng-model="delete" ng-click="dlt=false">Cancelar</button>
                 </td>
             </tr>
         </table>
-        <button class="btn btn-primary btn-block btn-danger"> <a ng-href="index.html#/deletarOrdem/{{ordens.id}}" class="link-main lin">Deletar</a></button>
-   
+        <button class="btn btn-primary btn-block btn-danger"> <a ng-href="index.html#/deletarOrdem/{{ordens.id}}"
+                class="link-main lin">Deletar</a></button>
+
         <button class="btn btn-primary btn-block "><a class="normal"
-            href="index.html#/diagnostico/{{ordens.id}}">Inserir diagnóstico para ordem</a></button>
+                href="index.html#/diagnostico/{{ordens.id}}">Inserir diagnóstico para ordem</a></button>
 
         <a class="link-main lin" href="index.html#/ordens">
             < Voltar</a>
