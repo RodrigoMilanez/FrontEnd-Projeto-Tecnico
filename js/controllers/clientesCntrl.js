@@ -16,7 +16,7 @@ angular.module("projetoTecnico").controller("clientesController", function ($sco
         clientesService.post(newCliente).then(function (response) {
             $location.path("/clientes");
         }).catch(function (error) {
-            alert("Não foi possivel registrar novo funcionário");
+            alert("Não foi possivel registrar novo cliente");
         });
     };
 })

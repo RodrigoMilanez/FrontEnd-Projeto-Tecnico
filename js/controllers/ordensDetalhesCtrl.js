@@ -53,7 +53,7 @@ $scope.deleteOrdem = function (ordemId) {
     $scope.cancelar = function(ordem){
         var ordemId = ordem.id
         ordensService.cancelar(ordemId).then(function (response){
-           $location.path("/Checkout");
+           $location.path("/cancelada");
         })
     }
 

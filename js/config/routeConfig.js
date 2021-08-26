@@ -87,6 +87,10 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         controller: "ordensDetalheController"
     });
 
+    $routeProvider.when("/cancelada", {
+        templateUrl: "view/utilitários/cancel.html",
+        controller: "ordensDetalheController"
+    });
 
     $routeProvider.otherwise("/funcionarios")  
     
