@@ -43,17 +43,27 @@ $scope.deleteOrdem = function (ordemId) {
         })
     }   
     
-    $scope.aceitar = function(ordem, ordemId){
+    $scope.aceitar = function(ordemId){
+        
          ordensService.aceitar(ordemId).then(function (response){
             $location.path("/Checkout");
          })
     }
 
-    $scope.cancelar = function(ordemId){
+    $scope.cancelar = function(ordem){
+        var ordemId = ordem.id
         ordensService.cancelar(ordemId).then(function (response){
            $location.path("/Checkout");
         })
-   }
+    }
+
+    $scope.concluir = function(ordem){
+        var ordemId = ordem.id
+        ordensService.concluir(ordemId).then(function (response){
+            window.location.reload()
+        })
+    }
+
     
 })
 

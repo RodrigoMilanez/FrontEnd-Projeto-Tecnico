@@ -27,11 +27,15 @@ angular.module("projetoTecnico").service("ordensService", function (config, $htt
         return $http.put(config.apiUrl + "/ordens/" + ordemId + "/diagnostico", ordem)
     }
 
-    this.aceitar = (ordemId) => {
-        return $http.get(config.apiUrl + "/ordens/" + ordemId + "/aprovado")
+    this.aceitar = (ordem) => {
+        return $http.get(config.apiUrl + "/ordens/" + ordem.id + "/aprovado")
     }
 
     this.cancelar = (ordemId) => {
         return $http.get(config.apiUrl + "/ordens/" + ordemId + "/cancelar")
+    }
+
+    this.concluir = (ordemId) => {
+        return $http.get(config.apiUrl + "/ordens/" + ordemId + "/concluir")
     }
 })

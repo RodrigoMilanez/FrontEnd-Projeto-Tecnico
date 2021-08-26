@@ -129,6 +129,10 @@
         <button class="btn btn-primary btn-block "><a class="normal"
                 href="index.html#/diagnostico/{{ordens.id}}">Inserir diagnóstico para ordem</a></button>
 
+                <button ng-show="ordens.status == 'REPARO'" class="btn btn-primary btn-block accept"><a class="normal"
+                    ng-click="concluir(ordens)">Concluir Ordem</a></button>
+    
+
         <a class="link-main lin" href="index.html#/ordens">
             < Voltar</a>
     </div>
