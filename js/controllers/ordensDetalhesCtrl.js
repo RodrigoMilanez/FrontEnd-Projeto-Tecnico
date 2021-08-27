@@ -43,23 +43,34 @@ $scope.deleteOrdem = function (ordemId) {
         })
     }   
     
+   
+   
     $scope.aceitar = function(ordemId){
-        
-         ordensService.aceitar(ordemId).then(function (response){
+        var updateOrdem = {
+            "status": 1
+        }
+         ordensService.resposta(updateOrdem, ordemId).then(function (response){
             $location.path("/Checkout");
          })
     }
 
-    $scope.cancelar = function(ordem){
-        var ordemId = ordem.id
-        ordensService.cancelar(ordemId).then(function (response){
+    $scope.cancelar = function(ordemId){
+        var updateOrdem = {
+            "status": 2
+        }
+        ordensService.resposta(updateOrdem, ordemId).then(function (response){
            $location.path("/cancelada");
         })
     }
 
-    $scope.concluir = function(ordem){
-        var ordemId = ordem.id
-        ordensService.concluir(ordemId).then(function (response){
+
+
+
+    $scope.concluir = function(ordemId){
+        var updateOrdem = {
+            "status": 3
+        }
+        ordensService.concluir(updateOrdem,ordemId).then(function (response){
             window.location.reload()
         })
     }

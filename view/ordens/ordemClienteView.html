@@ -76,34 +76,17 @@
                     <td colspan="2"><img ng-src="https://projeto-tecnico-rmo.s3.sa-east-1.amazonaws.com/{{equipamento.img}}"
                             alt=""></td>
                 </tr>
-                <tr ng-show="dlt==false">
-                    <td colspan="2" class="danger"> <button class="btn btn-primary btn-block btn-danger" ng-model="dlt"
-                            ng-click="dlt=true">Deletar</button></td> <br>
-                </tr>
-    
-                <tr ng-show="dlt==true">
-                    <td colspan="2">Tem certeza que deseja deletar o equipamento {{equipamento.nome}}</td>
-                </tr>
-    
-                <tr ng-show="dlt==true">
-                    <td>
-                        <button class="btn btn-primary btn-block btn-danger" ng-model="delete"
-                            ng-click="deleteEquipamento(ordens.id,equipamento.id)">Deletar</button>
-                    </td>
-                    <td>
-                        <button class="btn btn-primary btn-block" ng-model="delete" ng-click="dlt=false">Cancelar</button>
-                    </td>
-                </tr>
+                
             </table>
             <div>
                 <table class="table table-striped table-dark">
                         <h1 colspan="2">Confirme ou cancele a ordem de serviço:</h1>
                     <tr>
                         <td>
-                            <button class="btn btn-block accept" ng-click="aceitar(ordens)">Aceitar ordem</button>
+                            <button class="btn btn-block accept" ng-click="aceitar(ordens.id)">Aceitar ordem</button>
                         </td>
                         <td>
-                            <button class="btn btn-block cancel" ng-click="cancelar(ordens)"  ng-click="dlt=false">Cancelar Ordem</button>
+                            <button class="btn btn-block cancel" ng-click="cancelar(ordens.id)"  ng-click="dlt=false">Cancelar Ordem</button>
                         </td>
                     </tr>
                 </table>

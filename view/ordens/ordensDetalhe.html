@@ -78,7 +78,7 @@
                 <td>{{equipamento.orcamento}}</td>
 
             </tr>
-            <!-- =================================== IMAGEM  =========================================-->
+            <!-- ====================================IMAGEM  =========================================-->
             <tr ng-show="uploadImagem == false && equipamento.img == null">
                 <td colspan="2">
                     <button class="btn btn-primary btn-block " ng-click="uploadImagem = true">Enviar imagem</button>
@@ -102,7 +102,7 @@
                 <td colspan="2"><img ng-src="https://projeto-tecnico-rmo.s3.sa-east-1.amazonaws.com/{{equipamento.img}}"
                         alt=""></td>
             </tr>
-            <!--=================================== IMAGEM =============================================-->
+            <!--=================================== IMAGEM=============================================-->
             <tr ng-show="dlt==false">
                 <td colspan="2" class="danger"> <button class="btn btn-primary btn-block btn-danger" ng-model="dlt"
                         ng-click="dlt=true">Deletar</button></td> <br>
@@ -129,7 +129,7 @@
                 href="index.html#/diagnostico/{{ordens.id}}">Inserir diagnóstico para ordem</a></button>
 
         <button ng-show="ordens.status == 'REPARO'" class="btn btn-primary btn-block accept"><a class="normal"
-                ng-click="concluir(ordens)">Concluir Ordem</a></button>
+                ng-click="concluir(ordens.id)">Concluir Ordem</a></button>
 
 
         <a class="link-main lin" href="index.html#/ordens">
