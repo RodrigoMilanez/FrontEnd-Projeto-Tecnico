@@ -31,7 +31,6 @@ angular.module("projetoTecnico").controller("ordensController", function ($scope
     $scope.postOrdem = function (newOrder) {
         var ordem = {
             "clienteId" : newOrder.clienteId,
-            "nome" : 4,
             "pagamento":{
                 "@type" : newOrder.pagamento.tipo,
                 "numeroDeParcelas" : newOrder.pagamento.parcelas

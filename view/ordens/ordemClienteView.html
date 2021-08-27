@@ -71,7 +71,10 @@
                 <tr ng-hide="equipamento.orcamento == null || equipamento.orcamento == 0">
                     <td class="c2">Orçamento</td>
                     <td>{{equipamento.orcamento}}</td>
-    
+                </tr>
+                <tr>
+                    <td colspan="2"><img ng-src="https://projeto-tecnico-rmo.s3.sa-east-1.amazonaws.com/{{equipamento.img}}"
+                            alt=""></td>
                 </tr>
                 <tr ng-show="dlt==false">
                     <td colspan="2" class="danger"> <button class="btn btn-primary btn-block btn-danger" ng-model="dlt"
