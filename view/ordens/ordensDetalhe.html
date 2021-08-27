@@ -103,7 +103,7 @@
                         alt=""></td>
             </tr>
             <!--=================================== IMAGEM=============================================-->
-            <tr ng-show="dlt==false">
+            <tr ng-hide="dlt==true || ordens.status == 'CONCLUIDO'">
                 <td colspan="2" class="danger"> <button class="btn btn-primary btn-block btn-danger" ng-model="dlt"
                         ng-click="dlt=true">Deletar</button></td> <br>
             </tr>
@@ -125,7 +125,7 @@
         <button class="btn btn-primary btn-block btn-danger"> <a ng-href="index.html#/deletarOrdem/{{ordens.id}}"
                 class="link-main lin">Deletar</a></button>
 
-        <button class="btn btn-primary btn-block " ng-show="ordens.status == 'DIAGNÓSTICO'"><a class="normal"
+        <button class="btn btn-primary btn-block " ng-show="ordens.status == 'DIAGNOSTICO'"><a class="normal"
                 href="index.html#/diagnostico/{{ordens.id}}">Inserir diagnóstico para ordem</a></button>
 
         <button ng-show="ordens.status == 'REPARO'" class="btn btn-primary btn-block accept"><a class="normal"
