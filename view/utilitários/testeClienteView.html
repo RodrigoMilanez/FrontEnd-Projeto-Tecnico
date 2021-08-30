@@ -1,0 +1,58 @@
+
+<!--View exclusivamente para teste de email vindo de thymeleaf-->
+<html>
+	<head>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+             table{
+                border-color: black;
+                border-style: solid;
+                text-align: center;
+                border-width: 1px;
+            }
+            td, th{
+                border-color: black;
+                border-style: solid;
+                border-width: 1px;
+            }
+        </style>
+	</head>
+	<body>
+		<div>
+			<h1>
+				Olá <span>Augusto Carrara</span>! 
+			</h1>
+			<p>
+				Seus equipamentos já foram diagnosticados! Para dar continuadade a ordem de serviço você deve aprovar o item no 
+                nosso site. O botão levará você para a página, para que você revise a Ordem e o orçamento. Assim que a ordem for 
+                atualizada, nossos técnicos irão começar o conserto dos itens. Abaixo segue uma lista dos equipamentos compreendidos na ordem. 
+			</p>
+			<table>
+			<tr>
+				<th>Id do equipamento</th>
+				<th>Nome do equipamento</th>
+				<th>Avaria do equipamento</th>
+				<th>Orçamento individual do equipamento</th>
+			</tr>
+			<tr>
+					<td>11</td>
+    				<td >Taxi Corsa 2008</td>
+    				<td >não tá andando</td>
+    				<td >894</td>
+			</tr> 
+			<tr>
+				<th colspan="4">Orçamento da ordem</td>
+			</tr>
+			<tr>
+				<td colspan="4">894</td>
+			</tr>
+			<table>
+			<br>
+			<button><a href='http://127.0.0.1:5500/index.html#/clienteView/8'>Acessar a ordem</a></button>
+		</div>
+	</body>
+</html>
