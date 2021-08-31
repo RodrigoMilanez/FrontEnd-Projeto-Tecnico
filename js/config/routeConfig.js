@@ -10,6 +10,12 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         templateUrl: "view/login.html",
         controller: "loginController"
     });
+
+    $routeProvider.when("/esqueciSenha", {
+        templateUrl: "view/esqueciMinhaSenha.html",
+        controller: "loginController"
+    });
+
     $routeProvider.when("/cadastroFuncionario", {
         templateUrl: "view/funcionarios/cadastroFuncionario.html",
         controller: "funcionarioController"

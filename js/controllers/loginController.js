@@ -10,6 +10,12 @@ angular.module("projetoTecnico").controller("loginController", function ($scope,
         });
     }
 
+    $scope.alterar = function (user) {
+        loginService.alterar(user).then(function(response){
+            $location.path("/login")
+        })
+    }
+
     $scope.logout = () => {
         localStorage.clear();
     }

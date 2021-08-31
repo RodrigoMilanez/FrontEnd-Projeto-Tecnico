@@ -39,6 +39,9 @@ $scope.deleteOrdem = function (ordemId) {
     $scope.diagnostico = function (ordens ,ordemId){
         ordensService.diagnostico(ordens ,ordemId).then(function (response) {
             $location.path("/ordens/"+ ordemId);
+        }).catch(function (error) {
+            alert("Apenas administradores e técnicos podem diagnosticar uma ordem de serviço!")
+            $location.path("/ordens/"+ ordemId);
         })
     }
 
@@ -75,9 +78,6 @@ $scope.deleteOrdem = function (ordemId) {
         })
     }
 
-
-
-
     $scope.concluir = function(ordemId){
         var updateOrdem = {
             "status": 3
@@ -89,9 +89,3 @@ $scope.deleteOrdem = function (ordemId) {
 
     
 })
-
-    
-
-    
-
-

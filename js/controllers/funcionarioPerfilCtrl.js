@@ -4,11 +4,13 @@ angular.module("projetoTecnico").controller("funcionarioPerfilController", funct
             $scope.funcionarios = response.data;
             console.log(response)
     }).catch(function (error){
-        if (error.status = 403){
+        if (localStorage.token == null){
+            console.log(localStorage)
             alert("Você precisa estar logado para acessar esta página")
-    $location.path("/login")
-        } else {
+        $location.path("/login")
+        } else if (error.status == 403) {
             alert(error.data.message)
+            $location.path("/funcionarios")
         }
     });
 
@@ -21,10 +23,6 @@ angular.module("projetoTecnico").controller("funcionarioPerfilController", funct
     };
 
     $scope.alteraSenha = function (x, id) {
-        // var senha = {
-        //     senha:x,
-        //     id:id
-        // }
         funcionarioService.postSenha(x, id).then(function (response) {
             $location.path("/funcionarioPerfil/{{id}}" );
         }).catch(function (error) {
