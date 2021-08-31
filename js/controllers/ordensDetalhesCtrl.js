@@ -3,14 +3,26 @@ angular.module("projetoTecnico").controller("ordensDetalheController", function 
     ordensService.getId($routeParams.id).then(function (response) {
         $scope.ordens = response.data;
         console.log(response)
+}).catch(function (error){
+    if (error.status = 403){
+        alert("Você precisa estar logado para acessar esta página")
+$location.path("/login")
+    } else {
+        alert(error.data.message)
+    }
 });
 
 
 $scope.deleteOrdem = function (ordemId) {
     ordensService.delete($routeParams.id).then(function (response) {
         $location.path("/ordens");
-    }).catch(function (error) {
-        alert("Você não tem permissão para deletar a ordem");
+    }).catch(function (error){
+        if (error.status = 403){
+            alert("Você precisa estar logado para acessar esta página")
+    $location.path("/login")
+        } else {
+            alert(error.data.message)
+        }
     });
 };
     $scope.dlt=false;

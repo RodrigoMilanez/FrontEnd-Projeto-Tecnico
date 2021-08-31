@@ -4,6 +4,13 @@ angular.module("projetoTecnico").controller("clientesController", function ($sco
         clientesService.get().then(function (response) {
             $scope.clientes = response.data.content;
             console.log(response)
+        }).catch(function (error){
+            if (error.status = 403){
+                alert("Você precisa estar logado para acessar esta página")
+        $location.path("/login")
+            } else {
+                alert(error.data.message)
+            }
         });
     };
     carregarClientes();

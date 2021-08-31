@@ -216,3 +216,6 @@ img{
 .cancel:hover{
   background-color:#ff1e00;
 }
+.logout{
+  margin-right: 500px;
+}

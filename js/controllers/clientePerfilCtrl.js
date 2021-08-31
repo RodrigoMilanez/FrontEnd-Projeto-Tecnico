@@ -3,6 +3,13 @@ angular.module("projetoTecnico").controller("clientePerfilController", function 
     clientesService.getCliId($routeParams.id).then(function (response) {
         $scope.clientes = response.data;
         console.log(response)
+    }).catch(function (error){
+        if (error.status = 403){
+            alert("Você precisa estar logado para acessar esta página")
+    $location.path("/login")
+        } else {
+            alert(error.data.message)
+        }
     });
 
     $scope.deleteCliente = function (id) {

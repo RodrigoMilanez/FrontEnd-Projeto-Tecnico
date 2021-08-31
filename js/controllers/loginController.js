@@ -9,4 +9,9 @@ angular.module("projetoTecnico").controller("loginController", function ($scope,
             alert("Usúario ou senha incorretos!");
         });
     }
+
+    $scope.logout = () => {
+        localStorage.clear();
+    }
+
 })

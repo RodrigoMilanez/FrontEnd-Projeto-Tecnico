@@ -5,6 +5,13 @@ angular.module("projetoTecnico").controller("funcionarioController", function ($
         funcionarioService.get().then(function (response) {
             $scope.funcionarios = response.data.content;
             console.log(response)
+        }).catch(function (error){
+            if (error.status = 403){
+                alert("Você precisa estar logado para acessar esta página")
+        $location.path("/login")
+            } else {
+                alert(error.data.message)
+            }
         });
     };
     carregarFuncionarios();
