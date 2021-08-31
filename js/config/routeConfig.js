@@ -6,6 +6,11 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         controller: "funcionarioController"
     });
 
+    $routeProvider.when("/home", {
+        templateUrl: "view/utilitários/home.html",
+        controller: "loginController"
+    });
+
     $routeProvider.when("/login", {
         templateUrl: "view/login.html",
         controller: "loginController"
@@ -98,6 +103,6 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
         controller: "ordensDetalheController"
     });
 
-    $routeProvider.otherwise("/funcionarios")  
+    $routeProvider.otherwise("/home")  
     
 })

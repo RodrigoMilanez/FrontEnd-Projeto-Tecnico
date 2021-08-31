@@ -125,8 +125,7 @@ body {
 
   .nav {
     display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
+    width:100%;
     margin-bottom: 0;
     list-style: none;
     background-color: #212529;
@@ -218,4 +217,37 @@ img{
 }
 .logout{
  text-align: right;
+}
+
+.frontPg{
+  margin: 100px;
+  padding: 50px;
+	background: #212529;
+  text-align:center;
+}
+
+.Danger{
+  background:#ff1e00;
+  color:#000000;
+}
+.mainMenu{
+  border-style:none;
+  width:100%;
+  margin-top: 50px;
+  margin-bottom:50px;
+}
+
+.m1 {
+  background-color: #51e2ff;
+  }
+
+.m2{
+  background-color:#ffc107;
+}
+.m3{
+  background-color: #ff006a;
+}
+.frontLink{
+  text-decoration:none;
+  color:black;
 }
