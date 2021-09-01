@@ -94,13 +94,11 @@ angular.module("projetoTecnico").config(function ($routeProvider,$locationProvid
     });
 
     $routeProvider.when("/Checkout", {
-        templateUrl: "view/utilitários/checkout.html",
-        controller: "ordensDetalheController"
+        templateUrl: "view/utilitários/checkout.html"
     });
 
     $routeProvider.when("/cancelada", {
-        templateUrl: "view/utilitários/cancel.html",
-        controller: "ordensDetalheController"
+        templateUrl: "view/utilitários/cancel.html"
     });
 
     $routeProvider.otherwise("/home")  

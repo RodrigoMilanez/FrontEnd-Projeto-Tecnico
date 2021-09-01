@@ -34,7 +34,7 @@ angular.module("projetoTecnico").service("ordensService", function (config, $htt
     }
 
     this.resposta = (ordem, ordemId) => {
-        return $http.put(config.apiUrl + "/ordens/" + ordemId+ "/respostaCliente", ordem)
+        return $http.put(config.apiUrl + "/ordens" + "/respostaCliente/" + ordemId, ordem)
     }
 
     this.concluir = (ordem,ordemId) => {

@@ -251,3 +251,20 @@ img{
   text-decoration:none;
   color:black;
 }
+
+.checkout{
+  background-color:#555555;
+  color: #000000;
+  text-align: center;
+  margin: 50px;
+}
+
+.cancelado h1{
+  color:#ff1e00;
+  
+}
+
+.aceito h1{
+  color:#3ad42c;
+  
+}

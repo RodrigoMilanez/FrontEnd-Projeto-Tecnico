@@ -24,7 +24,11 @@ angular.module("projetoTecnico").controller("funcionarioController", function ($
         funcionarioService.post(newFuncionario).then(function (response) {
             $location.path("/funcionarios");
         }).catch(function (error) {
-            alert("Não foi possivel registrar novo funcionário");
+            if (error.status = 403) {
+                alert("Apenas o administrador tem autorização para registrar um novo usuário!")
+            } else {
+                alert("Parece que ocorreu um erro ao tentar registrar o novo usuário.")
+            }
         });
     };
 
